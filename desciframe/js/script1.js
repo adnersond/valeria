@@ -367,7 +367,7 @@ function mostrarPopup(imagenSrc, texto, elementoParaFoco) {
     // Cambiar la fuente de la imagen después de 1 segundo
     setTimeout(() => {
         popupImage.src = "img/" + imagenSrc;
-    }, 1000); // 1000 milisegundos = 1 segundo
+    }, 500); // 1000 milisegundos = 1 segundo
 }
 
 // Funciones específicas para cada tipo de pop-up
@@ -463,4 +463,5 @@ document.addEventListener('keydown', () => {
 
 // Inicialización
 animacionImagen.src = "img/0.png";
+
 detectarInactividad(); // Iniciar la detección de inactividad al cargar la página
