@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descíframe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="content">
+            <h1>Descíframe</h1>
+
+            <div class="clave-selector">
+                <button id="claveSolBtn" class="clave-btn active">Clave de Sol</button>
+                <button id="claveFaBtn" class="clave-btn">Clave de Fa</button>
+            </div>
+
+            <img id="Animacion" src="img/0.png" alt="Imagen de ejemplo">
+
+            <textarea id="mensaje" rows="4" cols="50" placeholder="Escribe tu mensaje aquí..." ></textarea>
+
+            <div class="ocultar-mensaje">
+                <input type="checkbox" id="ocultarMensaje">
+                <label for="ocultarMensaje">Ocultar mensaje</label>
+            </div>
+
+            <button id="iniciarComparar">Iniciar</button>
+
+            <div id="imagenesMensaje">
+                <!-- Aquí se mostrarán las imágenes -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-up a pantalla completa (inicialmente oculto) -->
+    <div id="popupContainer" class="popup-container">
+        <div class="popup-content">
+            <img id="popupImage" src="img/neutral.png" alt="Imagen del pop-up">
+            <p id="popupText">Este es el texto del pop-up.</p>
+            <button id="popupAceptar">Aceptar</button>
+        </div>
+    </div>
+
+    <script src="js/script1.js"></script>
+</body>
+</html>
