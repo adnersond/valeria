@@ -363,6 +363,7 @@ function mostrarPopup(imagenSrc, texto, elementoParaFoco) {
     popupText.textContent = texto;
     popupContainer.style.display = 'flex'; // Usamos 'flex' para activar el display
     popupAceptar.focusElement = elementoParaFoco; // Guarda el elemento para enfocar en el botón
+    popupAceptar.focus();
 
     // Cambiar la fuente de la imagen después de 1 segundo
     setTimeout(() => {
@@ -376,11 +377,11 @@ function mostrarPopupAviso(texto, elementoParaFoco) {
 }
 
 function mostrarPopupGanar(texto, elementoParaFoco) {
-    mostrarPopup("ganar.png", texto, elementoParaFoco);
+    mostrarPopup("aviso.png", texto, elementoParaFoco);
 }
 
 function mostrarPopupPerder(texto, elementoParaFoco) {
-    mostrarPopup("perder.png", texto, elementoParaFoco);
+    mostrarPopup("aviso.png", texto, elementoParaFoco);
 }
 
 // Evento para cerrar el pop-up al hacer clic en "Aceptar"
@@ -463,4 +464,5 @@ document.addEventListener('keydown', () => {
 
 // Inicialización
 animacionImagen.src = "img/0.png";
+
 detectarInactividad(); // Iniciar la detección de inactividad al cargar la página
