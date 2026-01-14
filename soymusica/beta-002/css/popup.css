@@ -1,0 +1,105 @@
+/* ============================================================
+   ESTILOS GENERALES PARA TODOS LOS POPUPS DEL JUEGO
+   ============================================================ */
+
+/* Capa base oscura para todos los popups */
+.overlay-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    backdrop-filter: blur(4px);
+}
+
+/* El cuadro blanco (molde para cualquier popup) */
+.contenedor-popup {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%; /* Responsivo: 90% en móviles */
+    max-width: 550px; /* Tamaño máximo en PC */
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    animation: aparecerPopup 0.3s ease-out;
+}
+
+@keyframes aparecerPopup {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* La 'X' de cierre en la esquina */
+.boton-cerrar-x {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.boton-cerrar-x:hover {
+    color: #ff4d4d;
+}
+
+/* Espaciado del cuerpo y botones */
+.cuerpo-popup {
+    margin: 20px 0;
+}
+
+.footer-popup {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* Estilos específicos para este popup de música (puedes moverlo abajo) */
+.contenedor-imagenes-musicales {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px; /*para que las imagenes esten pegadas*/
+    margin: 20px 0;
+    padding: 15px;
+    /*background-color: #f9f9f9;*/
+    background-image: url(../resources/otros/fondo_juego_nota.png);
+    background-size: cover;
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+
+.contenedor-imagenes-musicales img {
+    max-height: 110px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 0px;
+}
+
+.boton-secundario {
+    background-color: #95a5a6;
+    /*background-color: #95a5a6 !important;*/
+}
+
+.boton-secundario:hover{
+    background-color: #ff4d4d;
+}
+
+#h2_Popup_Nivel_Titulo, #h2_Popup_Desafio_Titulo{
+    text-decoration: underline;
+}
+
+/* Media Query para móviles pequeños */
+@media (max-width: 400px) {
+    .contenedor-popup { padding: 20px; }
+    .footer-popup { flex-direction: column; }
+}

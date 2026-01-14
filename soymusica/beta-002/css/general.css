@@ -1,0 +1,377 @@
+/* ========================== ESTILOS GENERALES ========================== */
+@font-face {
+    font-family: 'ChristmasWish';
+    src: url('../font/ChristmasWish-Calligraphy.otf') format('opentype'); /* Ajusta la ruta si es necesario */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../font/Roboto.ttf') format('truetype'); /* Ajusta la ruta si es necesario */
+    font-weight: normal;
+    font-style: normal;
+}
+
+a {
+   cursor: pointer; 
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+input[type="checkbox"]:hover{
+    background-color: black;
+}
+
+label {
+    cursor: pointer;
+    user-select: none; /* Evita que el texto se sombreado azul al hacer muchos clics rápidos */
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+    color: #333333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+}
+
+/* ========================== ESTILOS DEL CONTENIDO PRINCIPAL ========================== */
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ========================== ESTILOS DEL DIV DE CONTENIDO ========================== */
+
+.contenido {
+    background-color: #EEEEEE;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 350px;
+    width: 90%;
+    margin-top: 10px;
+}
+
+/* ========================== ESTILOS PARA EL CONTENEDOR DEL TITULO Y LOGO ========================== */
+
+.titulo { /* Selecciona el primer div hijo directo de .contenido */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px; /* Espacio entre el logo/título y los botones */
+    margin-top: -10px;
+    background-color: darkgray;
+    border-radius: 7px;
+    position: relative;
+}
+
+.titulo h2 {
+    margin-bottom: 0;
+    margin-top: -5px;
+    margin-left: 15px;
+    font-size: 2.8em; /* Ajusta el tamaño del título */
+    word-spacing: 0.2em;
+    color: #222222; /* Color de título un poco más oscuro */
+    font-family: 'ChristmasWish';
+}
+
+.titulo img.logo {
+    max-width: 70px; /* Ajusta el tamaño del logo */
+    margin-bottom: 0;
+    margin-top: 8px;
+    margin-right: 45px;
+}
+
+#btn_Ir_Bienvenida_Principal{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-weight: bold;
+    border-radius: 5px;
+    border-color: brown;
+    color: white;
+    background-color: firebrick;
+    cursor: pointer;
+    transition: width 0.3s ease;
+    height: 100%;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  #btn_Ir_Bienvenida_Principal:hover {
+    background-color: #5f0907;  
+  }
+}
+
+#btn_Ir_Bienvenida_Principal.hovered{
+    color: white;
+    font-weight: bold;
+    width: 220px;
+    background-image: url();
+}
+
+/* ========================== ESTILOS DEL CONTENEDOR DE BOTONES (VERTICAL) ========================== */
+
+.botones-centrados {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.boton {
+    background-color: #555555;
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 17px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.boton:hover {
+    background-color: #333333;
+    transform: translateY(-2px);
+}
+/* ========================== ESTILOS DEL FIELDSET ========================== */
+
+.fieldset_general {
+    border: 1px solid #BBBBBB; /* Borde sutil */
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px 0; /* Margen superior e inferior */
+    text-align: left; /* Alinea el contenido a la izquierda */
+}
+
+.legend_general {    
+    /*font-family: 'CampanaScript';*/
+    font-size: 0.9em; /* Tamaño de fuente ligeramente más grande */
+    font-weight: bold;
+    color: #444444; /* Color un poco más oscuro */
+    padding: 1px 10px; /* Margen del legend*/
+    border: 1px solid #BBBBBB; /* Borde alrededor de la leyenda */
+    border-radius: 5px;
+    background-color: #DDDDDD; /* Fondo suave para la leyenda */
+    position: relative;
+    margin-bottom: -20px;
+}
+
+/* ========================== ESTILOS DEL FORMULARIO ========================== */
+.formulario_blanco { 
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #BBBBBB;
+    border-radius: 5px;
+    background-color: #FAFAFA;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================== IMAGEN DE MASCOTA ========================== */
+.img_mascota{
+    max-width: 200px;
+    /*max-height: 200px;*/
+}
+
+
+/* ========================== NOTA DE AVISO ========================== */
+#lbl_aviso{
+    font-size: 0.7em;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* ========================== BIENVENIDA ========================== */
+#p_Bienvenida{
+    font-weight: bold;
+    color: darkslateblue;
+}
+
+/* ========================== CERRAR SESION ========================== */
+#btn_Cerrar_Sesion{
+    background-color: brown;
+}
+
+#btn_Cerrar_Sesion:hover{
+    background-color: darkred;
+}
+
+/* ========================== COMBOS ========================== */
+/* Estilos para el Label del Combo */
+#lbl_Modo_Clave {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Estilos para el Select (Combo) */
+.combo_general {
+    display: block;
+    width: 100%;
+    margin: 0 auto 20px auto; /* Centrado horizontal y margen inferior */
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #5d4037; /* Color acorde a un estilo musical/clásico */
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.combo_general:focus {
+    border-color: #8d6e63;
+    box-shadow: 0 0 5px rgba(141, 110, 99, 0.5);
+}
+
+/* Estilo para las opciones dentro del combo */
+.combo_general option {
+    padding: 10px;
+}
+
+#h5_Div_Clave{
+    margin-top: -20px;
+    margin-bottom: 5px;
+}
+
+/* ========================== ESTILOS DEL PIE DE PÁGINA ========================== */
+
+footer {
+    margin-top: 50px;
+    background-color: #F0F0F0;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+    color: #666666;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- ANIMACIONES DE TRANSICIÓN --- */
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes zoomOut {
+    from { transform: scale(1); opacity: 1; }
+    to { transform: scale(0.9); opacity: 0; }
+}
+
+.efecto-entrada { animation: zoomIn 0.3s ease-out forwards; }
+.efecto-salida { animation: zoomOut 0.2s ease-in forwards; }
+
+/* --- PRELOADER GLOBAL --- */
+#div_Preloader_Global {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: #EEEEEE;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.spinner {
+    width: 50px; height: 50px;
+    border: 5px solid #BBBBBB;
+    border-top: 5px solid #555555;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#p_Mensaje_Preloader {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #555555;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Clase para ocultar elementos de forma definitiva */
+.oculto {
+    display: none !important;
+}
+
+.espacio{
+    visibility: hidden !important;
+}
+
+.boton_desactivado {
+    background-color: darkgray;
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: default;
+    font-size: 17px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.combo_desactivado{
+    cursor: default;
+}
+
+.movil{
+    display: none !important;
+}

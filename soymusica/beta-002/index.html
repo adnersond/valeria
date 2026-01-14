@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soy Música</title>
+    <link rel="icon" href="img/icono.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="css/general.css">
+    
+    <link rel="stylesheet" href="css/login_registro.css">
+    <link rel="stylesheet" href="css/claves_niveles.css">
+    <link rel="stylesheet" href="css/juego.css">
+    <link rel="stylesheet" href="css/popup.css">    
+    
+    <link rel="stylesheet" href="css/responsive.css">  
+    
+    
+</head>
+<body>
+    <!-- PRELOADER GLOBAL (Se verá al iniciar la página) -->
+    <div id="div_Preloader_Global">
+        <div class="spinner"></div>
+        <p id="p_Mensaje_Preloader">Iniciando aplicación...</p>
+    </div>
+
+    <!-- ========================== CONTENIDO PRINCIPAL ========================== -->
+    <main id="main_app" style="opacity: 0;"><div class="contenido">
+        <!-- Logo ahora fuera del div de contenido -->
+        <div class="titulo">            
+            <button id="btn_Ir_Bienvenida_Principal">Menú</button>
+            <h2 id="h2_Lectura_Musical">Lectura Musical</h2>
+            <img src="img/logo.png" alt="Logo" class="logo">
+        </div>
+        
+
+        <!-- ========================== DIV DE INICIO ========================== -->
+        <div class="inicio oculto" id="div_inicio">
+            <img src="img/inicio.png" class="img_mascota">
+            <fieldset class="fieldset_general">
+                <legend id="legend_inicio" class="legend_general">Elige una opción:</legend>
+                <div class="botones-centrados">
+                    <button class="boton" id="btn_M_Libre">Modo Libre</button>
+                    <button class="boton" id="btn_Ir_Iniciar_Sesion">Iniciar Sesión</button>
+                    <button class="boton" id="btn_Ir_Registrar">Registrarse</button>
+                </div>                
+            </fieldset>
+        </div>
+        
+        <!-- ========================== DIV DE LOGIN ========================== -->
+        <div class="login formulario_blanco oculto" id="div_login">
+            <h2>Iniciar Sesión</h2>
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario_login" name="usuario" placeholder="Ingresa tu usuario" autocomplete="off">
+
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password_login" name="password" placeholder="Ingresa tu contraseña" autocomplete="off">
+
+                <div>
+                    <input type="checkbox" id="ver_password" name="ver_password">
+                    <label for="ver_password" class="texto_chk">Ver Contraseña</label>
+                </div>
+
+                <button class="boton" id="btn_login">Iniciar Sesión</button>
+
+                <p>¿No tienes una cuenta? <a id="a_Registrar">Regístrate</a></p>
+            
+                <a class="a_Inicio" id="a_Inicio_login">Regresar al Inicio</a>
+        </div>
+        
+        <!-- ========================== DIV DE REGISTRO ========================== -->
+        <div class="registro formulario_blanco oculto" id="div_registro">
+            <h2>Crear Cuenta</h2>
+                <label for="usuario_registro">Usuario:</label>
+                <input type="text" id="usuario_registro" name="usuario_registro" placeholder="Ingresa tu usuario" autocomplete="off">
+                <label for="usuario_registro" id="p_Mensaje_Usuario">El nombre de usuario debe tener entre 6 a 15 caracteres</label>
+
+                <label for="password_registro">Contraseña:</label>
+                <input type="password" id="password_registro" name="password_registro" placeholder="Ingresa tu contraseña" autocomplete="off">
+                <label for="password_registro" id="p_Mensaje_Password">La contraseña debe tener entre 6 a 15 caracteres</label>
+
+                <label for="confirmar_password">Confirmar Contraseña:</label>
+                <input type="password" id="confirmar_password" name="confirmar_password" placeholder="Confirma tu contraseña" autocomplete="off">
+                <label for="confirmar_password" id="p_Mensaje_Confirmar">Las contraseñas no coinciden</label>
+
+                <div>
+                    <input type="checkbox" id="ver_password_registro" name="ver_password_registro">
+                    <label for="ver_password_registro" class="texto_chk">Ver Contraseña</label>
+                </div>
+
+                <button class="boton" id="btn_Registrar">Registrarse</button>
+            
+                <label for="chk_aceptar" id="p_terminos">Al registrarte debes de recordar tus datos de usuario y contraseña ya que si los olvidas no los podrás recuperar, además si no inicias sesión por al menos 6 meses tu cuenta será eliminada. *No pedimos nunca datos personales.</label>
+                <div>  
+                    <input type="checkbox" id="chk_aceptar" name="chk_aceptar">
+                    <label for="chk_aceptar" class="texto_chk">Acepto los términos y condiciones</label>
+                </div>
+
+                <p>¿Ya tienes una cuenta? <a id="a_I_Sesion">Inicia sesión</a></p>
+            
+                <a class="a_Inicio" id="a_Inicio_Registrar">Regresar al Inicio</a>
+        </div>
+        
+        <!-- ========================== DIV DE BIENVENIDA SELECCION ========================== -->
+        <div class="seleccion oculto" id="div_seleccion">
+            
+            <img src="img/bienvenido.png" class="img_mascota">
+            <p id="p_Bienvenida"></p>
+            <fieldset class="fieldset_general">
+                <legend class="legend_general">Seleccione un modo:</legend>
+                <div class="botones-centrados">
+                    <button class="boton" id="btn_Aprendizaje">Aprendizaje</button>
+                    <button class="boton" id="btn_Desafio">Desafío</button>
+                    <button class="boton" id="btn_Cerrar_Sesion">Cerrar Sesión</button>
+                </div>                
+            </fieldset>
+            <label id="lbl_aviso">Este sitio es un complemento en tu educación y no debe ser tomado como un reemplazo en lo absoluto. Recomendamos la guia de un profesor.<br>
+            Esta aplicación aún es una versión beta o de prueba, si detecta algún error o comportamiento inesperado comuníquelo al administrador. <br>
+            IMPORTANTE: No manipule la URL o link de la pagina ya que esto traerá consigo comportamiento inesperados, recomendamos navegar solo con los botones de navegación de su dispositivo o del sitio web.
+            </label>
+        </div>
+        
+        <!-- ========================== DIV DE SELECCION DE CLAVE ========================== -->
+        <div class="clave oculto" id="div_clave">
+            <h2 id="h2_Div_Clave"></h2>
+            <h5 id="h5_Div_Clave"></h5>
+            <img src="img/clave.png" class="img_mascota">
+            <label for="sel_Modo_Clave" id="lbl_Modo_Clave">Selecciona el conjunto de claves:</label>
+            
+            <select id="sel_Modo_Clave" name="sel_Modo_Clave" class="combo_general">
+                <option value="clasicas">Claves clásicas</option>
+                <option value="todas">Todas las claves</option>
+            </select>
+
+            <div class="div_Checkbox_Seleccionar_Varios_Niveles" id="div_Checkbox_Seleccionar_Varios_Niveles">  
+                <input type="checkbox" id="chk_Seleccionar_Varios_Niveles" name="chk_Seleccionar_Varios_Niveles">
+                <label for="chk_Seleccionar_Varios_Niveles" class="lbl_chk_claves">Seleccionar varias claves</label>
+            </div>
+            
+            <fieldset class="fieldset_general">
+                <legend class="legend_general" id="legend_Clave">Elije una clave:</legend>
+                <div class="botones-centrados" id="div_Botones_Claves">
+                    <!--  Clásicas  -->
+                    <button class="boton" id="btn_clave_sol_2">Clave de Sol</button>
+                    <button class="boton" id="btn_clave_fa_4">Clave de Fa</button>
+                    
+                    <!--  Se añaden en la opcion todas  -->
+                    <button class="boton" id="btn_clave_do_3">Clave de Do en 3ª Línea</button>
+                    <button class="boton" id="btn_clave_do_4">Clave de Do en 4ª Línea</button>
+                    
+                    <button class="boton" id="btn_clave_do_1">Clave de Do en 1ª Línea</button>
+                    <button class="boton" id="btn_clave_do_2">Clave de Do en 2ª Línea</button>
+                    <button class="boton" id="btn_clave_fa_3">Clave de Fa en 3ª Línea</button>
+                    <button class="boton" id="btn_clave_sol_1">Clave de Sol en 1ª Línea</button>
+                </div> 
+                
+                <div class="botones-centrados" id="div_Checkbox_Claves">
+                    <!--  Clásicas  -->
+                    <!-- Clave de Sol en 2ª Línea -->
+                    <div class="div_checks_claves" id="div_chk_clave_sol_2">  
+                        <input type="checkbox" id="chk_clave_sol_2" name="chk_clave_sol_2">
+                        <label for="chk_clave_sol_2" class="lbl_chk_claves">Clave de Sol</label>
+                    </div>
+                    
+                    <!-- Clave de Fa en 4ª Línea -->
+                    <div class="div_checks_claves" id="div_chk_clave_fa_4">  
+                        <input type="checkbox" id="chk_clave_fa_4" name="chk_clave_fa_4">
+                        <label for="chk_clave_fa_4" class="lbl_chk_claves">Clave de Fa</label>
+                    </div>
+                    
+                    <!--  Se añaden en la opcion todas  -->
+                    <!-- Clave de Do en 3ª Línea -->
+                    <div class="div_checks_claves" id="div_chk_clave_do_3">  
+                        <input type="checkbox" id="chk_clave_do_3" name="chk_clave_do_3">
+                        <label for="chk_clave_do_3" class="lbl_chk_claves">Clave de Do en 3ª Línea</label>
+                    </div>
+                    
+                    <!-- Clave de Do en 4ª Línea -->
+                    <div class="div_checks_claves" id="div_chk_clave_do_4">  
+                        <input type="checkbox" id="chk_clave_do_4" name="chk_clave_do_4">
+                        <label for="chk_clave_do_4" class="lbl_chk_claves">Clave de Do en 4ª Línea</label>
+                    </div>
+
+                    <!-- Clave de Do en 1ª Línea -->
+                    <div class="div_checks_claves" id="div_chk_clave_do_1">  
+                        <input type="checkbox" id="chk_clave_do_1" name="chk_clave_do_1">
+                        <label for="chk_clave_do_1" class="lbl_chk_claves">Clave de Do en 1ª Línea</label>
+                    </div>
+
+                    <!-- Clave de Do en 2ª Línea -->
+                    <div class="div_checks_claves" id="div_chk_clave_do_2">  
+                        <input type="checkbox" id="chk_clave_do_2" name="chk_clave_do_2">
+                        <label for="chk_clave_do_2" class="lbl_chk_claves">Clave de Do en 2ª Línea</label>
+                    </div>
+
+                    <!-- Clave de Fa en 3ª Línea -->
+                    <div class="div_checks_claves" id="div_chk_clave_fa_3">  
+                        <input type="checkbox" id="chk_clave_fa_3" name="chk_clave_fa_3">
+                        <label for="chk_clave_fa_3" class="lbl_chk_claves">Clave de Fa en 3ª Línea</label>
+                    </div>
+
+                    <!-- Clave de Sol en 1ª Línea -->
+                    <div class="div_checks_claves" id="div_chk_clave_sol_1">  
+                        <input type="checkbox" id="chk_clave_sol_1" name="chk_clave_sol_1">
+                        <label for="chk_clave_sol_1" class="lbl_chk_claves">Clave de Sol en 1ª Línea</label>
+                    </div>
+                    
+                    <!-- Boton de aceptar para los checks -->
+                    <button class="boton" id="btn_Aceptar_Multiples_Claves">Aceptar</button>
+                </div> 
+            </fieldset>
+        </div>
+        
+        <!-- ========================== DIV DE SELECCION DE NIVEL ========================== -->
+        <div class="niveles formulario_niveles oculto" id="div_niveles">
+            <h2 id="h2_Div_Niveles_Clave"></h2>
+            <h4 id="h4_Div_Niveles">Selecciona un nivel:</h4>
+            
+            <!-- <div class="desbloquear_niveles" id="div_Desbloquear_Niveles">  
+                <input type="checkbox" id="chk_desbloquear_niveles" name="chk_desbloquear_niveles">
+                <label for="chk_desbloquear_niveles" class="lbl_chk_niveles">Elegir nivel libremente</label>
+            </div> -->
+            
+            <div class="niveles-container" id="div_Contenedor_Niveles">
+                <!-- <button class="boton_niveles nivel-desbloqueado">1</button>
+                <button class="boton_niveles nivel-bloqueado">30</button> -->
+            </div>
+        </div>
+        
+        <!-- ========================== DIV DE JUEGO ========================== -->
+        <div class="juego formulario oculto" id="div_juego">
+            
+            
+            
+            <div id="div_Listos_Ya" class="">
+                <h1 id="h1_Listos_Ya"></h1>
+                <p id="p_PC" class="">Presiona aquí para empezar</p>
+            </div>
+            
+            
+            <div id="div_Juego_Iniciado" class="ocultos espacio"> 
+                <h2 id="h2_Div_Juego"></h2>
+                <h3 id="h3_Div_Juego"></h3>
+                <p>¿Qué nota es?</p> 
+                <p id="p_Div_Juego"></p>
+
+                <div class="imagenes-container">                
+                    <img src="" alt="Clave de Sol" id="img_Clave_Juego">
+                    <img src="" alt="Nota Musical" id="img_Nota_Juego">
+                    <img src="" id="img_Ultima_Imagen_Juego">                
+
+                    <button class="boton-sonido unmute" id="btn_Sonido"></button>
+                </div>
+                <div class="temporizador">
+                    <div class="barra-temporizador"></div>
+                </div>
+                <div class="botones-container">
+                    <button class="botones_alternativas" id="alternativa_1">Do</button>
+                    <button class="botones_alternativas" id="alternativa_2">Re</button>
+                    <button class="botones_alternativas" id="alternativa_3">Mi</button>
+                    <button class="botones_alternativas" id="alternativa_4">Fa</button>
+                </div> 
+            </div>
+            
+            
+        </div>
+    </div></main>
+
+    <!-- ========================== PIE DE PÁGINA (FOOTER) ========================== -->
+    <footer>
+        <p>Creado por Adner - Código Abierto</p>
+    </footer>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- ========================== POPUP DE INFORMACIÓN DE NIVEL ========================== -->
+    <div id="div_Popup_Informacion_Nivel" class="overlay-popup oculto">
+        <div class="contenedor-popup">
+            <!-- Botón de cerrar (X) genérico -->
+            <span id="btn_Popup_Nivel_Cerrar" class="boton-cerrar-x">&times;</span>
+
+            <!-- Título específico -->
+            <h2 id="h2_Popup_Nivel_Titulo">Nivel X</h2>
+
+            <!-- Cuerpo del popup (donde va el texto) -->
+            <div class="cuerpo-popup">
+                <p id="p_Popup_Nivel_Descripcion"></p>
+
+                <!-- Contenedor de imágenes específico de este popup -->
+                <div id="div_Popup_Nivel_Imagenes" class="contenedor-imagenes-musicales">
+                    <!-- Se llena por JS -->
+                </div>
+            </div>
+
+            <!-- Footer/Acciones genérico -->
+            <div class="footer-popup">
+                <button id="btn_Popup_Nivel_Aceptar" class="boton">Aceptar</button>
+                <button id="btn_Popup_Nivel_Cancelar" class="boton boton-secundario">Cancelar</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ========================== POPUP DE CONFIRMACIÓN MODO DESAFÍO ========================== -->
+    <div id="div_Popup_Confirmacion_Desafio" class="overlay-popup oculto">
+        <div class="contenedor-popup">
+            <!-- Botón de cerrar (X) -->
+            <span id="btn_Popup_Desafio_Cerrar" class="boton-cerrar-x">&times;</span>
+
+            <!-- Título (Aquí irán los nombres de las claves con saltos de línea) -->
+            <h2 id="h2_Popup_Desafio_Titulo">Clave</h2>
+
+            <!-- Cuerpo del popup -->
+            <div class="cuerpo-popup">
+                <p id="p_Popup_Desafio_Mensaje"></p>
+            </div>
+
+            <!-- Botones de Acción -->
+            <div class="footer-popup">
+                <button id="btn_Popup_Desafio_Aceptar" class="boton">Aceptar</button>
+                <button id="btn_Popup_Desafio_Cancelar" class="boton boton-secundario">Cancelar</button>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    <!-- ========================== POPUP DE CARGA DE ACTIVOS DEL JUEGO========================== -->
+    <div id="div_Popup_Carga" class="overlay-popup oculto">
+        <div class="contenedor-popup">
+            <!-- Título de carga -->
+            <h2 id="h2_Popup_Carga_Titulo">Cargando...</h2>
+
+            <!-- Cuerpo del popup con mensaje dinámico -->
+            <div class="cuerpo-popup">
+                <p id="p_Popup_Carga_Mensaje">Preparando notas musicales, por favor espera.</p>
+                <!-- Aquí podrías poner un spin CSS en el futuro -->
+            </div>
+
+            <!-- El botón de aceptar error estará oculto por defecto y solo saldrá si falla la carga -->
+            <div id="div_Popup_Carga_Error_Acciones" class="footer-popup oculto">
+                <button id="btn_Popup_Carga_Error_Aceptar" class="boton">Aceptar</button>
+            </div>
+        </div>
+    </div>
+    <!-- ========================== POPUP DE RESULTADOS DEL JUEGO ========================== -->
+    <div id="div_Popup_Resultados_Juego" class="overlay-popup oculto">
+        <div class="contenedor-popup">
+            <!-- Título del resultado -->
+            <h2 id="h2_Popup_Resultado_Titulo">¡Fin del Juego!</h2>
+
+            <!-- Cuerpo del popup -->
+            <div class="cuerpo-popup">
+                <!-- Imagen dinámica: ganar.png, perder.png o masomenos.png -->
+                <img id="img_Resultado_Juego" src="" alt="Resultado" style="max-height: 150px; margin-bottom: 15px;">
+
+                <div id="div_Estadisticas_Finales">
+                    <p id="p_Resumen_Aciertos">Aciertos: 0</p>
+                    <p id="p_Resumen_Errores">Errores: 0</p>
+                </div>
+
+                <p id="p_Mensaje_Final_Juego" style="font-weight: bold; margin-top: 15px;"></p>
+            </div>
+
+            <!-- Botones de Acción -->
+            <div class="footer-popup">
+                <button id="btn_Popup_Repetir_Nivel" class="boton">Repetir Nivel</button>
+                <!-- <button id="btn_Popup_Resultado_Aceptar" class="boton boton-secundario">Aceptar</button> -->
+                <button id="btn_Popup_Resultado_Aceptar" class="boton boton-secundario">Seleccionar otro nivel</button>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <script src="librerias/xlsx.full.min.js"></script>
+    <script src="js/referencias_dom.js"></script>
+    <script src="js/desactivados.js"></script>
+    
+    <!--<script src="js/general.js"></script>-->
+    
+    <script src="js/navegacion.js"></script>
+    <script src="js/entrada_teclado.js"></script>
+    <script src="js/usuario.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/niveles.js"></script>
+    <script src="js/claves.js"></script>
+    <script src="js/juego.js"></script>
+    
+    <script src="js/precarga.js"></script>
+    
+    <!-- <script src="js/juego1.js"></script>
+    <script src="js/juego2.js"></script>
+    <script src="js/juego3.js"></script>
+    <script src="js/juego4.js"></script> -->
+    
+</body>
+</html>
+
+<!-- http://localhost/soymusica/ -->
