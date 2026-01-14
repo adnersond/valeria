@@ -1,11 +1,5 @@
 <?php
 // db_conection.php
-//ONLINE
-$servername = "sql101.infinityfree.com"; 
-$username = "if0_40062938";
-$password = "ZNOh5rcHNWLzwt";
-$database = "if0_40062938_db_soy_musica";
-
 //LOCAL 1
 /*$servername = "localhost"; 
 $username = "admin";
@@ -382,6 +376,7 @@ function subirNivelUsuario($conn, $usuario, $clave, $nuevoNivel) {
         return ['success' => false, 'message' => $e->getMessage()];
     }
 }
+
 
 
 
