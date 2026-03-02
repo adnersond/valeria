@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cumpleaños Mágico</title>
+    <link rel="icon" href="0.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. POPUP DE BIENVENIDA -->
+    <div id="welcomePopup" class="popup-overlay">
+        <div class="popup-box">
+            <h2>✨ ¡Día Especial! ✨</h2>
+            <p>Elige un efecto y presiona o raspa en cualquier lado de la pantalla para empezar a celebrar 😊</p>
+
+            <div class="emoji-selector" id="emojiSelector">
+                <button class="emoji-btn selected" data-emoji="heart">❤️</button>
+                <button class="emoji-btn" data-emoji="🥰">🥰</button>
+                <button class="emoji-btn" data-emoji="🥳">🥳</button>
+                <button class="emoji-btn" data-emoji="🎉">🎉</button>
+                <button class="emoji-btn" data-emoji="🎂">🎂</button>
+                <button class="emoji-btn" data-emoji="🎁">🎁</button>
+                <button class="emoji-btn" data-emoji="🎈">🎈</button>
+                <button class="emoji-btn" data-emoji="✨">✨</button>
+            </div>
+
+            <button id="closePopup">¡Aceptar y Descubrir!</button>
+        </div>
+    </div>
+
+    <!-- 2. CARTA / MENSAJE ESPECIAL (Oculto inicialmente) -->
+    <div id="letterModal" class="popup-overlay" style="display: none; opacity: 0; z-index: 300;">
+        <div class="letter-box">
+            <div class="letter-content">
+                <h3>Holi... ✨</h3>
+                <p>Valeria, en este día tan especial, deseo que la vida te regale tantas sonrisas como hoy has raspado en esta pantalla.</p>
+                <p>Que este nuevo año de vida sea una aventura llena de sueños cumplidos y mucha magia.</p>
+                <p><strong>¡Feliz Cumpleaños! 🎂🎈</strong></p>
+                <button id="closeLetter">Cerrar sobre</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. CONTENIDO OCULTO -->
+    <div class="content" style="opacity: 0;">
+        <img src="fondo.avif" alt="Fondo">
+        
+        <div class="text-container">
+            <img id="img_vs" src="1.png" alt="Decoración 1">
+            <h1>¡Feliz Cumpleaños Valeria 🤗!</h1>
+            
+            <!-- CONTENEDOR DEL SOBRE FLOTANTE (Aparecerá al final) -->
+            <div id="envelopeWrapper" class="clickeable" style="display: none;">
+                <div class="envelope">
+                    <span class="envelope-emoji">✉️</span>
+                    <!-- <span class="heart-seal">❤️</span>  -->
+                    <span class="heart-seal">🌹</span>
+                </div>
+            </div><br>
+            
+            
+            <div id="div_img_2"><img id="img_vs_2" src="2.png" alt="Decoración 2"></div>
+
+            <div class="audio-player-container clickeable" id="div_clickeable">
+                <audio controls id="musicaFondo">
+                    <source src="happy_birthday.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el audio.
+                </audio>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. CAPAS DE RASPADO Y EFECTOS -->
+    <canvas id="maskCanvas"></canvas>
+    <canvas id="heartCanvas"></canvas>
+    <button id="resetBtn" class="reset-button">Reiniciar</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
